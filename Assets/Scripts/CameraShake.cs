@@ -9,6 +9,7 @@ public class CameraShake : MonoBehaviour
     Vector3 initialPosition;
     void Start()
     {
+        // Get Camera Position
         initialPosition = transform.position;
     }
 
@@ -20,12 +21,17 @@ public class CameraShake : MonoBehaviour
     IEnumerator ScreenShake()
     {
         float timePassed = 0;
+
+        // Shake the camera for as long as ShakeDuration
         while (timePassed < ShakeDuration)
         {
+            // Change x and y position using ShakeMagnitude, update timePassed and wait for the end of the frame
             transform.position = initialPosition + (Vector3) Random.insideUnitCircle * ShakeMagnitude;
             timePassed += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+
+        // Return Camera position to its original position
         transform.position = initialPosition;
     }
 }

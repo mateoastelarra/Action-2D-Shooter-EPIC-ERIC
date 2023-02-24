@@ -12,6 +12,7 @@ public class DamageDealer : MonoBehaviour
 
     public void Hit()
     {
+        // Check if Hit was Made by horizontal fireball in order to respawn it
         if (gameObject.transform.tag == "Fireball")
         {
             FindObjectOfType<FireBallMovement>().tookDamage = true;
