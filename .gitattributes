@@ -141,3 +141,4 @@
 # Matching files extension
 */*/My?Project/*.vb linguist-generated
 Assets/TextMesh?Pro/* linguist-vendored
+*.ShaderLab linguist-detectable=false
